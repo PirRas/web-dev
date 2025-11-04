@@ -11,16 +11,20 @@
 
     <!-- Dieses Divider-Element enthält die Überschrift und eine erste Information zur Seite-->
     <!-- Das Element enthält zwei Kinder-Elemente (h1 und p) -->
-    <div>
-      <h1>Meine erste Webseite</h1>
+    <div id="introduction" class="container">
+      <h1 id="mainTitle" style="color: blue; text-transform: uppercase;" class="titleClass">
+        Meine erste Webseite
+      </h1>
       <p> Hier entsteht meine erste Webseite. <br> Ich erzähle etwas zu mir und schreibe dann einen Absatz über ein interessantes Thema. </p>
     </div>
 
     <!-- Dieses Divider-Element enthält alle Informationen zur Person-->
     <!-- Das Element enthält 4 Kinder-Elemente (h2, ul, h2 und p) und 4 Enkel-Kinder (li) -->
-    <div>
+    <div id="aboutMe" class="container" style="color:white ; background-color: gray;">
       <h2>Über mich</h2>
-
+      <button id="displayAboutMe" class="submitButton" style="background-color: red;color:white; border-radius: 5px;">Inhalt anzeigen</button>
+      <button id="hideAboutMe" class="submitButton" style="background-color: green;color:white;">Inhalt verbergen</button>
+      <p> Die Border-Radius Eigenschaft verändert die Abrundung der Ecken eines HTML-Elements </p>
       <ul>
         <li>Mein Vorname ist Piravin.</li>
         <li>Ich bin 17 Jahre alt.</li>
@@ -32,18 +36,34 @@
 
       <h2>Ich interessiere mich für Religionen</h2>
       <p> Die Vielfalt der Religionen und Übereinstimmungen sind gross und meiner Meinung nach soll jeder ein bestimmtes Grundwissen haben, da es viele Handlungen der heutigen Zeit erklärt. </p>
-      
-      
     </div>
-    <div>
+    <div id="conatctForm">
+      <label>Name:</label>
+      <input type="text" id="nameInput">
+      <label>Passwort:</label>
+      <input type="password" id="passwordInput">
+      <label>Anzahl Geschwister:</label>
+      <input type="number" id="siblingsInput" min="0" max="50" step="1" value="0">
+    </div>
+    <div id="favouriteSubjects" class="container">
       <h2>Meine 4 Lieblingsfächer</h2>
       <ol>
-        <li>Schwerpunkt Biologie</li>
+        <li id="favSubject" style="color:green">Schwerpunkt Biologie</li>
         <li>Schwerpunkt Chemie</li>
         <li>Mathe</li>
         <li>Freikurs Volleyball</li>
       </ol>
       <p>Das <em>Schwerpunktfach Biologie</em> ist mein Lieblingsfach, da ich es sehr spannend finde, wie alltäglich, normale Sachen erklärt werden auf einer detaillierten, biologischen Ebene.</p>
+    </div>
+    <div class="container" id="favouriteMusic">
+      <h2>Meine Lieblingsmusik</h2>
+      <a href="https://www.youtube.com/watch?v=-IDBMS8670I" target="_blank">Zu meinem Lieblingssong</a>
+      <ul>
+        <li>Jazeek</li>
+        <img src="https://www.ticketcorner.ch/obj/media/CH-eventim/teaser/evo/artwork/2025/jazeek-tickets-2025-v3.jpg" alt="4EVER Tour 2026 Jazeek" width="500px">
+        <li>DanteYN</li>
+        <li>Monet192</li>
+      </ul>
     </div>
 
   </body>
