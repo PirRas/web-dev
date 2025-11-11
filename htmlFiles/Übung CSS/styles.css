@@ -1,0 +1,22 @@
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+#pokemon-cards {
+    background-color: lightgray;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+}
+
+#title{
+    color: red;
+}
+
+#title-section {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
