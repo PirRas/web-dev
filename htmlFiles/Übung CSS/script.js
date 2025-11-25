@@ -26,41 +26,77 @@ pokemonCards.id = "pokemon-cards";
 pokemonCards.classList.add("container");
 document.body.appendChild(pokemonCards);
 
+let detailSection = document.createElement("div");
+detailSection.id = "detail-section";
+detailSection.classList.add("container");
+detailSection.style.display = "none";
+document.body.appendChild(detailSection);
+
+let detailCard = document.createElement("div");
+detailCard.classList.add("card", "detail-card");
+detailSection.appendChild(detailCard);
+
+let detailName = document.createElement("h2");
+detailCard.appendChild(detailName);
+
+let detailImage = document.createElement("img");
+detailImage.alt = "Pokemon Bild";
+detailCard.appendChild(detailImage);
+
+let detailType = document.createElement("p");
+detailCard.appendChild(detailType);
+
+let backButton = document.createElement("button");
+backButton.id = "back-button";
+backButton.textContent = "Zurück";
+detailSection.appendChild(backButton);
+
+// Funktionen
+function showDetail(pokemon){
+  detailName.textContent = pokemon.name;
+  detailImage.src = pokemon.image;
+  detailImage.alt = pokemon.name;
+  detailType.textContent = "Typ: " + pokemon.type;
+
+  pokemonCards.style.display = "none";
+  firstSection.style.display = "none";
+  detailSection.style.display = "flex";
+}
+
+function hideDetail(){
+  detailSection.style.display = "none";
+  pokemonCards.style.display = "flex";
+  firstSection.style.display = "flex";
+}
+
 
 for (const pokemon of pokemons){
-
+    
     const card = document.createElement("div");
     card.classList.add("card");
 
-    const title = document.createElement("h2");
-    title.textContent = pokemon.name;
+    const cardTitle = document.createElement("h2");
+    cardTitle.textContent = pokemon.name;
 
     const image = document.createElement("img");
     image.src = pokemon.image;
+    image.alt = pokemon.name;
 
     const type = document.createElement("p");
     type.textContent = "Typ: " + pokemon.type;
 
-    card.appendChild(title);
+    card.appendChild(cardTitle);
     card.appendChild(image);
     card.appendChild(type);
+
+    card.addEventListener('click', () => {
+      showDetail(pokemon);
+    });
 
     pokemonCards.appendChild(card);
 }
 
-// Funktionen
-
-
-const cities = ["Paris", "London", "Berlin"];
-
-cities.forEach(city => {
-  console.log(city);
-  console.log(city.length);
-});
-
-
-
-
-
-
 // Event-Listeners
+backButton.addEventListener('click', () => {
+  hideDetail();
+});
